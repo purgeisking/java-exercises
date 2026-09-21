@@ -14,21 +14,28 @@ public class AccessDemo {
         System.out.println("=== Calling Public Method ===");
         // TODO: 2 - Call the publicGreeting() method on your instance and print the result.
         //  This works because public methods are accessible from anywhere.
+        AccessModifiers.publicGreeting();
 
         System.out.println("\n=== Calling Package-Private Method ===");
         // TODO: 3 - Call the packageGreeting() method on your instance and print the result.
         //  This works because AccessDemo is in the SAME package as AccessModifiers.
+        AccessModifiers.packageGreeting();
 
         System.out.println("\n=== Accessing Private Field Through Getter ===");
         // TODO: 4 - Use setSecret() to set a value, then use getSecret() to read it back.
         //  Print the result. This demonstrates proper encapsulation:
         //  we access the private field only through public getter/setter methods.
+        AccessModifiers secret = new AccessModifiers();
+        System.out.println(secret.setSecret("Hello"));
 
         System.out.println("\n=== Why Direct Private Access Won't Work ===");
         // TODO: 5 - Write a comment explaining why the following line would NOT compile:
         //  // instance.secret = "trying direct access";
         //  Then leave the line commented out, preceded by your explanation.
         //  Hint: think about what 'private' means for field visibility outside the class.
+
+        ///  The field 'secret' is private, so it can only be accessed directly from within the class where it is declared.
+        /// It cannot be accessed directly through an instance from outside that class.
 
     }
 }

@@ -1,5 +1,7 @@
 package com.amigoscode._2_developers._1_loops;
 
+import java.util.Scanner;
+
 /**
  * Loop Exercises
  *
@@ -7,7 +9,7 @@ package com.amigoscode._2_developers._1_loops;
  * accumulators, pattern printing, reverse iteration, and controlled infinite loops.
  */
 public class LoopExercises {
-
+Scanner scan = new Scanner(System.in);
     /**
      * Prints a multiplication table from 1 to n using nested loops.
      * Example for n=3:
@@ -21,6 +23,15 @@ public class LoopExercises {
         // TODO: 1 - Use nested for loops to print an n x n multiplication table.
         //  Outer loop iterates rows 1..n, inner loop iterates columns 1..n.
         //  Print each product followed by a tab, and a newline after each row.
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+
+
+            System.out.print((i * j) + " ");
+            }
+                System.out.println();
+
+        }
 
     }
 
@@ -35,6 +46,17 @@ public class LoopExercises {
         int sum = 0;
         // TODO: 2 - Loop from 1 to n. Use 'continue' to skip multiples of 3.
         //  Use 'break' to stop if sum exceeds 100. Add the current number to sum otherwise.
+        for (int i = 1; i <=n ; i++) {
+            sum += i;
+            if ((sum%3) == 0){
+                continue;
+            } else if (sum >100) {
+                break;
+            }
+            System.out.println(sum);
+
+
+        }
 
         return sum;
     }
@@ -68,6 +90,11 @@ public class LoopExercises {
         long accumulator = 1;
         // TODO: 4 - Use a for loop from 1 to n (inclusive), multiplying accumulator
         //  by the loop variable each iteration. Return the result.
+        for (int i = 1; i <= n; i++) {
+            accumulator *= i;
+
+
+        }
 
         return accumulator;
     }
@@ -100,6 +127,9 @@ public class LoopExercises {
         StringBuilder sb = new StringBuilder();
         // TODO: 6 - Use a for loop starting from the last index down to 0.
         //  Append each element to sb. Add ", " between elements but not after the last one.
+        for (int i = 0; i < arr.length; i++) {
+
+        }
 
         return sb.toString();
     }
@@ -113,20 +143,31 @@ public class LoopExercises {
      * @return the number of iterations before the target was generated
      */
     public static int countUntilMatch(int target) {
-        int attempts = 0;
+        int attempts = 100;
         java.util.Random random = new java.util.Random();
         // TODO: 7 - Use while(true) to create an infinite loop.
         //  Each iteration: increment attempts, generate a random int between 1 and 100,
         //  and break if it matches the target.
 
+        for (int i = 1; i <= attempts; i++) {
+            int currentrandomnum = random.nextInt(1, 100);
+            System.out.println("attempts: " + i + " generated: " +currentrandomnum);
+            if (currentrandomnum == target) {
+                break;
+            }
+
+
+
+        }
+
         return attempts;
     }
 
     public static void main(String[] args) {
-        System.out.println("=== Multiplication Table (4x4) ===");
+        System.out.println("=== Multiplication Table (4x4) ===");// done
         printMultiplicationTable(4);
 
-        System.out.println("\n=== Sum with Skip and Stop (n=50) ===");
+        System.out.println("\n=== Sum with Skip and Stop (n=50) ==="); //done
         System.out.println("Sum: " + sumWithSkipAndStop(50));
 
         System.out.println("\n=== Find in Matrix ===");
@@ -139,7 +180,7 @@ public class LoopExercises {
         System.out.println(findInMatrix(matrix, 99));
 
         System.out.println("\n=== Factorial ===");
-        System.out.println("5! = " + factorial(5));
+        System.out.println("5! = " + factorial(5)); //done
         System.out.println("10! = " + factorial(10));
 
         System.out.println("\n=== Pyramid (5 rows) ===");
@@ -149,6 +190,6 @@ public class LoopExercises {
         System.out.println(iterateBackwards(new int[]{1, 2, 3, 4, 5}));
 
         System.out.println("\n=== Count Until Match ===");
-        System.out.println("Attempts to find 42: " + countUntilMatch(42));
+        System.out.println("Attempts to find 42: " + countUntilMatch(42)); //somehow done
     }
 }

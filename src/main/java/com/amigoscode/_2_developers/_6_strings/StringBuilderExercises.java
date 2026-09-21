@@ -20,7 +20,12 @@ public class StringBuilderExercises {
         // TODO: 1 - Create a new StringBuilder.
         //  Append "Hello, ", then name, then "! You are ", then age, then " years old."
         //  Convert to String and return.
-        return null;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hello ");
+        sb.append(name);
+        sb.append("! you are " + age +" years old.");
+
+        return String.valueOf(sb);
     }
 
     /**
@@ -36,7 +41,8 @@ public class StringBuilderExercises {
         //  Find the index of the first space using indexOf(" ").
         //  Insert middleName + " " at position (spaceIndex + 1).
         //  Convert to String and return.
-        return null;
+
+    return null;
     }
 
     /**

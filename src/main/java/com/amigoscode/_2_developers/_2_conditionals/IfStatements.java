@@ -18,7 +18,9 @@ public class IfStatements {
     public static String evenOrOdd(int number) {
         // TODO: 1 - Use the ternary operator ( condition ? valueIfTrue : valueIfFalse )
         //  to return "Even" or "Odd" based on whether number % 2 == 0.
-        return null;
+        String evenOrOdd = (number % 2 == 0) ? "Even" : "Odd";
+        return evenOrOdd;
+//        return null;
     }
 
     /**
@@ -33,7 +35,13 @@ public class IfStatements {
     public static boolean isEligibleForLoan(int age, double income, boolean hasGuarantor) {
         // TODO: 2 - Use a single return statement with && and || operators
         //  to express the eligibility condition described above.
+
+        if((age >= 18 && income >=30000) || hasGuarantor == true ){
+            return true;
+        }else {
         return false;
+        }
+
     }
 
     /**
@@ -46,7 +54,12 @@ public class IfStatements {
     public static String getGrade(int score) {
         // TODO: 3 - Use nested ternary operators to return the correct grade.
         //  Example pattern: score >= 90 ? "A" : score >= 80 ? "B" : ...
-        return null;
+        String grade = (score >= 90)? "A"
+                  : (score >= 80)? "B"
+                  : (score >= 70)? "C"
+                  : "F";
+        return grade;
+//        return null;
     }
 
     /**
@@ -59,7 +72,15 @@ public class IfStatements {
     public static int safeLength(String text) {
         // TODO: 4 - Check if text is null before calling text.length().
         //  Return -1 if text is null, otherwise return text.length().
-        return 0;
+
+
+        if (text == null ){
+            return -1;
+        }
+        else {
+            return text.length();
+        }
+
     }
 
     /**
@@ -75,7 +96,16 @@ public class IfStatements {
         //  If both are null, return true.
         //  If only one is null, return false.
         //  Otherwise, use a.equals(b) — never use == for string content comparison.
-        return false;
+        if(a == null && b ==null){
+            return true;
+        }
+        if (a == null || b == null){
+            return false;
+        }
+        else {
+            return a.equals(b);
+        }
+
     }
 
     /**
@@ -95,7 +125,18 @@ public class IfStatements {
         //      ...
         //      default -> "Invalid";
         //  };
-        return null;
+        String weekday = switch (day) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Sartuday";
+            case 7 -> "Sunday";
+            default -> "Invalid";
+        };
+        return weekday;
+
     }
 
     public static void main(String[] args) {
