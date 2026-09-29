@@ -1,5 +1,8 @@
 package com.amigoscode._2_developers._12_classes;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  * Enum Exercises
  *
@@ -42,6 +45,17 @@ public class EnumExercises {
         //  For each season, print a message like "Spring: Flowers bloom"
         //  using the getDescription() method.
         //  Test with Season.SUMMER.
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+        Season season = Season.valueOf(input.toUpperCase());
+        String message = switch (season){
+            case SPRING -> "Spring: " + Season.SPRING.getDescription();
+            case SUMMER -> "Summer: " + Season.SUMMER.getDescription() ;
+            case AUTUMN -> "Autumn: " + Season.AUTUMN.getDescription();
+            case WINTER -> "Winter: " + Season.WINTER.getDescription();
+        };
+        System.out.println(message);
+        scan.close();
 
 
         System.out.println("\n=== Iterate Over Enum Values ===");
@@ -49,6 +63,11 @@ public class EnumExercises {
         //  Loop through them and print each one with its description and ordinal.
         //  Example output: "0: SPRING - Flowers bloom"
         //  Also iterate over Priority.values() and print each with its level.
+
+        Season[] seasons = Season.values();
+        for (Season seasonn : seasons){
+            System.out.println(seasonn);
+        }
 
     }
 }
